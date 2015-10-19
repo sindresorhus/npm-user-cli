@@ -1,0 +1,50 @@
+{
+  "name": "npm-user-cli",
+  "version": "0.0.0",
+  "description": "Get user info of a npm user",
+  "license": "MIT",
+  "repository": "sindresorhus/npm-user-cli",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bin": {
+    "npm-user": "cli.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "npm",
+    "user",
+    "username",
+    "homepage",
+    "email",
+    "get",
+    "website",
+    "scrape",
+    "info",
+    "profile"
+  ],
+  "dependencies": {
+    "meow": "^3.4.2",
+    "npm-user": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "pify": "^2.2.0",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
+  }
+}
