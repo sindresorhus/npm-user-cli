@@ -1,6 +1,6 @@
 # npm-user-cli [![Build Status](https://travis-ci.org/sindresorhus/npm-user-cli.svg?branch=master)](https://travis-ci.org/sindresorhus/npm-user-cli)
 
-> Get user info of a npm user
+> Get user info of an npm user
 
 
 ## Install
