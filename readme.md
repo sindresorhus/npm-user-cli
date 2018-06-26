@@ -22,10 +22,8 @@ $ npm-user --help
     $ npm-user sindresorhus
     Name: Sindre Sorhus
     Email: sindresorhus@gmail.com
-    Homepage: http://sindresorhus.com
-    Twitter: sindresorhus
     GitHub: sindresorhus
-    Freenode: sindresorhus
+    Twitter: sindresorhus
 ```
 
 
@@ -36,4 +34,4 @@ $ npm-user --help
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

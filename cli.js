@@ -11,20 +11,20 @@ const cli = meow(`
 	  $ npm-user sindresorhus
 	  Name: Sindre Sorhus
 	  Email: sindresorhus@gmail.com
-	  Homepage: http://sindresorhus.com
-	  Twitter: sindresorhus
 	  GitHub: sindresorhus
-	  Freenode: sindresorhus
+	  Twitter: sindresorhus
 `);
 
-const username = cli.input[0];
+const [username] = cli.input;
 
 if (!username) {
 	console.error('Specify an npm username');
 	process.exit(1);
 }
 
-npmUser(username).then(user => {
+(async () => {
+	const user = await npmUser(username);
+
 	const ret = [];
 
 	const createRow = (prefix, key) => {
@@ -35,10 +35,8 @@ npmUser(username).then(user => {
 
 	createRow('Name', 'name');
 	createRow('Email', 'email');
-	createRow('Homepage', 'homepage');
 	createRow('GitHub', 'github');
 	createRow('Twitter', 'twitter');
-	createRow('Freenode', 'freenode');
 
 	console.log(ret.join('\n'));
-});
+})();
