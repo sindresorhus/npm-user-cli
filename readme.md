@@ -1,4 +1,4 @@
-# npm-user-cli [![Build Status](https://travis-ci.org/sindresorhus/npm-user-cli.svg?branch=master)](https://travis-ci.org/sindresorhus/npm-user-cli)
+# npm-user-cli
 
 > Get user info of an npm user
 
