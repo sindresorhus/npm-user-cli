@@ -2,6 +2,8 @@
 import process from 'node:process';
 import meow from 'meow';
 import npmUser from 'npm-user';
+import chalk from 'chalk';
+import figures from 'figures';
 
 const cli = meow(`
 	Usage
@@ -20,7 +22,7 @@ const cli = meow(`
 const [username] = cli.input;
 
 if (!username) {
-	console.error('Specify an npm username');
+	console.error(chalk.red('Specify an npm username (ex: npm-user sindresorhus)'));
 	process.exit(1);
 }
 
@@ -30,7 +32,13 @@ if (!username) {
 
 	const createRow = (prefix, key) => {
 		if (user[key]) {
-			rows.push(`${prefix}: ${user[key]}`);
+			if (key === 'github') {
+				rows.push(`${chalk.yellow(figures.star)} ${chalk.green(prefix)}: ${chalk.bold(user[key])} ${chalk.gray(`(${chalk.underline(`https://github.com/${user[key]}`)})`)}`);
+			} else if (key === 'twitter') {
+				rows.push(`${chalk.yellow(figures.star)} ${chalk.green(prefix)}: ${chalk.bold(user[key])} ${chalk.gray(`(${chalk.underline(`https://twitter.com/${user[key]}`)})`)}`);
+			} else {
+				rows.push(`${chalk.yellow(figures.star)} ${chalk.green(prefix)}: ${chalk.bold(user[key])}`);
+			}
 		}
 	};
 
