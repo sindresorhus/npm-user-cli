@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-'use strict';
-const meow = require('meow');
-const npmUser = require('npm-user');
+import process from 'node:process';
+import meow from 'meow';
+import npmUser from 'npm-user';
 
 const cli = meow(`
 	Usage
@@ -13,7 +13,9 @@ const cli = meow(`
 	  Email: sindresorhus@gmail.com
 	  GitHub: sindresorhus
 	  Twitter: sindresorhus
-`);
+`, {
+	importMeta: import.meta,
+});
 
 const [username] = cli.input;
 
@@ -24,12 +26,11 @@ if (!username) {
 
 (async () => {
 	const user = await npmUser(username);
-
-	const ret = [];
+	const rows = [];
 
 	const createRow = (prefix, key) => {
 		if (user[key]) {
-			ret.push(`${prefix}: ${user[key]}`);
+			rows.push(`${prefix}: ${user[key]}`);
 		}
 	};
 
@@ -38,5 +39,5 @@ if (!username) {
 	createRow('GitHub', 'github');
 	createRow('Twitter', 'twitter');
 
-	console.log(ret.join('\n'));
+	console.log(rows.join('\n'));
 })();

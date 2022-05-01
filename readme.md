@@ -2,13 +2,11 @@
 
 > Get user info of an npm user
 
-
 ## Install
 
+```sh
+npm install --global npm-user-cli
 ```
-$ npm install --global npm-user-cli
-```
-
 
 ## Usage
 
@@ -26,12 +24,6 @@ $ npm-user --help
     Twitter: sindresorhus
 ```
 
-
 ## Related
 
 - [npm-user](https://github.com/sindresorhus/npm-user) - API for this module
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)

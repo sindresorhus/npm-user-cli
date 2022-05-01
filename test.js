@@ -1,8 +1,7 @@
-import childProcess from 'child_process';
+import {execa} from 'execa';
 import test from 'ava';
-import pify from 'pify';
 
 test('main', async t => {
-	const stdout = await pify(childProcess.execFile)('./cli.js', ['sindresorhus']);
-	t.is(stdout.trim().split('\n')[0], 'Name: Sindre Sorhus');
+	const {stdout} = await execa('./cli.js', ['sindresorhus']);
+	t.is(stdout.split('\n')[0], 'Name: Sindre Sorhus');
 });
