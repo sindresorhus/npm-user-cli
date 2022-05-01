@@ -1,6 +1,6 @@
 {
 	"name": "npm-user-cli",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"description": "Get user info of an npm user",
 	"license": "MIT",
 	"repository": "sindresorhus/npm-user-cli",
