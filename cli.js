@@ -22,7 +22,7 @@ const cli = meow(`
 const [username] = cli.input;
 
 if (!username) {
-	console.error(chalk.red('Specify an npm username (ex: npm-user sindresorhus)'));
+	console.error(chalk.red('Specify an npm username'));
 	process.exit(1);
 }
 
