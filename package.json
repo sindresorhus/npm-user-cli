@@ -39,9 +39,9 @@
 	],
 	"dependencies": {
 		"chalk": "^5.0.1",
-		"figures": "^4.0.1",
 		"meow": "^10.1.2",
-		"npm-user": "^5.0.0"
+		"npm-user": "^5.0.0",
+		"terminal-link": "^3.0.0"
 	},
 	"devDependencies": {
 		"ava": "^4.2.0",

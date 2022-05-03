@@ -3,7 +3,7 @@ import process from 'node:process';
 import meow from 'meow';
 import npmUser from 'npm-user';
 import chalk from 'chalk';
-import figures from 'figures';
+import terminalLink from 'terminal-link';
 
 const cli = meow(`
 	Usage
@@ -33,11 +33,11 @@ if (!username) {
 	const createRow = (prefix, key) => {
 		if (user[key]) {
 			if (key === 'github') {
-				rows.push(`${chalk.yellow(figures.star)} ${chalk.green(prefix)}: ${chalk.bold(user[key])} ${chalk.gray(`(${chalk.underline(`https://github.com/${user[key]}`)})`)}`);
+				rows.push(`${chalk.green(prefix)}: ${chalk.bold("@"+user[key])} ${chalk.gray(terminalLink(`(Click Here)`, `https://github.com/${user[key]}`))}`);
 			} else if (key === 'twitter') {
-				rows.push(`${chalk.yellow(figures.star)} ${chalk.green(prefix)}: ${chalk.bold(user[key])} ${chalk.gray(`(${chalk.underline(`https://twitter.com/${user[key]}`)})`)}`);
+				rows.push(`${chalk.green(prefix)}: ${chalk.bold("@"+user[key])} ${chalk.gray(terminalLink(`(Click Here)`, `https://twitter.com/${user[key]}`))}`);
 			} else {
-				rows.push(`${chalk.yellow(figures.star)} ${chalk.green(prefix)}: ${chalk.bold(user[key])}`);
+				rows.push(`${chalk.green(prefix)}: ${chalk.bold(user[key])}`);
 			}
 		}
 	};
