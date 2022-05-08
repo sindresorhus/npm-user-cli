@@ -12,9 +12,9 @@ const cli = meow(`
 	Example
 	  $ npm-user sindresorhus
 	  Name: Sindre Sorhus
-	  Email: sindresorhus@gmail.com
-	  GitHub: sindresorhus
-	  Twitter: sindresorhus
+	 Email: sindresorhus@gmail.com
+	GitHub: sindresorhus
+       Twitter: sindresorhus
 `, {
 	importMeta: import.meta,
 });
