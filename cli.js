@@ -8,7 +8,6 @@ import terminalLink from 'terminal-link';
 const cli = meow(`
 	Usage
 	  $ npm-user <username>
-
 	Example
 	  $ npm-user sindresorhus
 	  Name: Sindre Sorhus
@@ -33,11 +32,13 @@ if (!username) {
 	const createRow = (prefix, key) => {
 		if (user[key]) {
 			if (key === 'github') {
-				rows.push(`${chalk.green(prefix)}: ${chalk.bold(terminalLink("@"+user[key], `https://github.com/${user[key]}`))}`);
+				rows.push(`${chalk.green(prefix)}:  ${chalk.bold(terminalLink("@"+user[key], `https://github.com/${user[key]}`))}`);
 			} else if (key === 'twitter') {
 				rows.push(`${chalk.green(prefix)}: ${chalk.bold(terminalLink("@"+user[key], `https://twitter.com/${user[key]}`))}`);
-			} else {
-				rows.push(`${chalk.green(prefix)}: ${chalk.bold(user[key])}`);
+			} else if (key === 'name') {
+				rows.push(`${chalk.green(prefix)}:    ${chalk.bold(user[key])}`);
+			} else if (key === 'email') {
+				rows.push(`${chalk.green(prefix)}:   ${chalk.bold(user[key])}`);
 			}
 		}
 	};
@@ -49,3 +50,4 @@ if (!username) {
 
 	console.log(rows.join('\n'));
 })();
+
