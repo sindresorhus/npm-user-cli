@@ -33,9 +33,9 @@ if (!username) {
 	const createRow = (prefix, key) => {
 		if (user[key]) {
 			if (key === 'github') {
-				rows.push(`${chalk.green(prefix)}: ${chalk.bold("@"+user[key])} ${chalk.gray(terminalLink(`(Click Here)`, `https://github.com/${user[key]}`))}`);
+				rows.push(`${chalk.green(prefix)}: ${chalk.bold(terminalLink("@"+user[key], `https://github.com/${user[key]}`))}`);
 			} else if (key === 'twitter') {
-				rows.push(`${chalk.green(prefix)}: ${chalk.bold("@"+user[key])} ${chalk.gray(terminalLink(`(Click Here)`, `https://twitter.com/${user[key]}`))}`);
+				rows.push(`${chalk.green(prefix)}: ${chalk.bold(terminalLink("@"+user[key], `https://twitter.com/${user[key]}`))}`);
 			} else {
 				rows.push(`${chalk.green(prefix)}: ${chalk.bold(user[key])}`);
 			}
