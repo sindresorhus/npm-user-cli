@@ -3,7 +3,9 @@ import test from 'ava';
 
 test('main', async t => {
 	const {stdout} = await execa('./cli.js', ['sindresorhus']);
-	t.regex(stdout, /Name: Sindre Sorhus/);
+	const [firstRow] = stdout.split('\n');
+
+	t.is(firstRow, 'Name: Sindre Sorhus');
 });
 
 test('no username', async t => {
