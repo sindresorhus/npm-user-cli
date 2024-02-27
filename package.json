@@ -15,7 +15,7 @@
 		"npm-user": "cli.js"
 	},
 	"engines": {
-		"node": ">=14.16"
+		"node": ">=18"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -38,12 +38,12 @@
 		"profile"
 	],
 	"dependencies": {
-		"meow": "^10.1.2",
-		"npm-user": "^5.0.0"
+		"meow": "^13.2.0",
+		"npm-user": "^6.0.0"
 	},
 	"devDependencies": {
-		"ava": "^4.2.0",
-		"execa": "^6.1.0",
-		"xo": "^0.48.0"
+		"ava": "^6.1.1",
+		"execa": "^8.0.1",
+		"xo": "^0.57.0"
 	}
 }

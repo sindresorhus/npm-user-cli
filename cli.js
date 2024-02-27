@@ -24,20 +24,19 @@ if (!username) {
 	process.exit(1);
 }
 
-(async () => {
-	const user = await npmUser(username);
-	const rows = [];
+const user = await npmUser(username);
+const rows = [];
 
-	const createRow = (prefix, key) => {
-		if (user[key]) {
-			rows.push(`${prefix}: ${user[key]}`);
-		}
-	};
+const createRow = (prefix, key) => {
+	if (user[key]) {
+		rows.push(`${prefix}: ${user[key]}`);
+	}
+};
 
-	createRow('Name', 'name');
-	createRow('Email', 'email');
-	createRow('GitHub', 'github');
-	createRow('Twitter', 'twitter');
+createRow('Name', 'name');
+createRow('Email', 'email');
+createRow('GitHub', 'github');
+createRow('Twitter', 'twitter');
 
-	console.log(rows.join('\n'));
-})();
+console.log(rows.join('\n'));
+
