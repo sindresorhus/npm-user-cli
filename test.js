@@ -1,7 +1,7 @@
 import {execa} from 'execa';
 import test from 'ava';
 
-// Note: not a full implementation, don't use elsewhere
+// Note: Not a full implementation, don't use elsewhere
 const dedent = string_ => string_.split('\n').map(x => x.trim()).filter(Boolean).join('\n');
 
 const verify = test.macro(async (t, {args, expected, error}) => {
