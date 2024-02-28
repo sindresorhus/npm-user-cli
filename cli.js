@@ -2,6 +2,7 @@
 import process from 'node:process';
 import meow from 'meow';
 import npmUser from 'npm-user';
+import logSymbols from 'log-symbols';
 
 const cli = meow(`
 	Usage
@@ -24,19 +25,28 @@ if (!username) {
 	process.exit(1);
 }
 
-const user = await npmUser(username);
-const rows = [];
+try {
+	const user = await npmUser(username);
+	const rows = [];
 
-const createRow = (prefix, key) => {
-	if (user[key]) {
-		rows.push(`${prefix}: ${user[key]}`);
+	const createRow = (prefix, key) => {
+		if (user[key]) {
+			rows.push(`${logSymbols.info} ${prefix}: ${user[key]}`);
+		}
+	};
+
+	createRow('Name', 'name');
+	createRow('Email', 'email');
+	createRow('GitHub', 'github');
+	createRow('Twitter', 'twitter');
+
+	console.log(rows.join('\n'));
+} catch (error) {
+	if (error.code === 'ERR_NO_NPM_USER') {
+		console.error(`${logSymbols.error} ${error.message}.`);
+		process.exit(1);
 	}
-};
 
-createRow('Name', 'name');
-createRow('Email', 'email');
-createRow('GitHub', 'github');
-createRow('Twitter', 'twitter');
-
-console.log(rows.join('\n'));
+	throw error;
+}
 

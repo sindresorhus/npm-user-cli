@@ -38,8 +38,9 @@
 		"profile"
 	],
 	"dependencies": {
+		"log-symbols": "^6.0.0",
 		"meow": "^13.2.0",
-		"npm-user": "^6.0.0"
+		"npm-user": "^6.1.0"
 	},
 	"devDependencies": {
 		"ava": "^6.1.1",
