@@ -42,11 +42,8 @@ try {
 
 	console.log(rows.join('\n'));
 } catch (error) {
-	// TODO:
-	// Or: error.response.status === 404
-	// Maybe `npm-user` should throw a new Error with code = 404?
-	if (error.message === 'User doesn\'t exist') {
-		console.error(`${logSymbols.error} User \`${username}\` could not be found.`);
+	if (error.code === 'ERR_NO_NPM_USER') {
+		console.error(`${logSymbols.error} ${error.message}.`);
 		process.exit(1);
 	}
 
