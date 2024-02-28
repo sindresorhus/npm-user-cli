@@ -12,8 +12,9 @@
 	},
 	"type": "module",
 	"bin": {
-		"npm-user": "cli.js"
+		"npm-user": "./cli.js"
 	},
+	"sideEffects": false,
 	"engines": {
 		"node": ">=18"
 	},
