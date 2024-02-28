@@ -2,7 +2,7 @@ import {execa} from 'execa';
 import test from 'ava';
 
 // Note: Not a full implementation, don't use elsewhere
-const dedent = string_ => string_.split('\n').map(x => x.trim()).filter(Boolean).join('\n');
+const dedent = string_ => string_.split('\n').slice(1, -1).map(x => x.trim()).join('\n');
 
 const verify = test.macro(async (t, {args, expected, error}) => {
 	const {stdout, stderr} = await execa('./cli.js', args.split(' '), {reject: false, env: {NO_COLOR: '1'}});
